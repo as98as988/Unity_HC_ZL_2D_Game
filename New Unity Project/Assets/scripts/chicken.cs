@@ -4,8 +4,37 @@ using UnityEngine;
 
 public class chicken : MonoBehaviour
 {
-    public int level = 1;//整數
-    public float speed = 10.6f;//浮點數
-    public string prop = "雞";//字串
-    public bool mission = true;//布林值
+    [Header("跳躍高度"), Range(50, 2000)]
+    public int jump = 100;
+    [Header("是否死亡")]
+    public bool dead;
+    
+    private void jump1()
+    {
+        print(111); 
+    }
+
+
+
+    private void Start()
+    {
+        jump1();
+    }
+
+
+
+
+    private void DEAD()        
+    {
+        print(123);
+    }
+
+
+
+
+    private void arrivepool() 
+       
+    {
+        print(456);
+    }
 }
