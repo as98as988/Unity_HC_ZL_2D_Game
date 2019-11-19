@@ -9,32 +9,27 @@ public class chicken : MonoBehaviour
     [Header("是否死亡")]
     public bool dead;
     
-    private void jump1()
+    private void Jump()
     {
-        print(111); 
+        
     }
 
-
-
-    private void Start()
-    {
-        jump1();
-    }
+ 
 
 
 
 
     private void DEAD()        
     {
-        print(123);
+       
     }
 
 
 
 
-    private void arrivepool() 
+    private void passpipe() 
        
     {
-        print(456);
+       
     }
 }

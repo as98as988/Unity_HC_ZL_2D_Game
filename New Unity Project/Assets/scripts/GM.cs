@@ -10,4 +10,19 @@ public class GM : MonoBehaviour
         public int score;
         [Header ("最高分數")]
         public int scoreheight;
+
+    public void AddScore(int add)
+    {
+
+    }
+
+    private void SetHighScore()
+    {
+
+    }
+
+    public void GameOver()
+    {
+
+    }
 }
