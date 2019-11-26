@@ -18,7 +18,7 @@ public class GM : MonoBehaviour
     /// </summary>
     public void SpawnPipe()
     {
-        float y = Random.Range(-1.1f, 2.1f);
+        float y = Random.Range(-0.8f, 1.7f);
         Vector3 pos = new Vector3(6f, y, 0);
 
         Quaternion rot = new Quaternion(0, 0, 0, 0);
