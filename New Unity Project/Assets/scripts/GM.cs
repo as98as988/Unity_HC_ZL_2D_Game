@@ -12,6 +12,8 @@ public class GM : MonoBehaviour
         public int scoreheight;
     [Header("水管")]
     public GameObject pipe;//G
+    [Header("介面群組")]
+    public GameObject goUI;
 
     /// <summary>
     /// 生成水管功能
@@ -40,7 +42,7 @@ public class GM : MonoBehaviour
 
     public void GameOver()
     {
-
+        goUI.SetActive(true);
     }
     private void Start()
     {

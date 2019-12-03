@@ -16,10 +16,11 @@ public class chicken : MonoBehaviour
     [Header("鋼體")]
 
     public Rigidbody2D r2d;
-
+    public GM gm;
     
     private void Jump()
     {
+        if (dead) return;//跳出此方法
         //如果按下左鍵
         if(Input.GetKeyDown(KeyCode.Mouse0))
         {
@@ -51,7 +52,8 @@ public class chicken : MonoBehaviour
 
     private void DEAD()        
     {
-       
+        dead = true;
+        gm.GameOver();
     }
 
 
@@ -66,5 +68,16 @@ public class chicken : MonoBehaviour
     {
         Jump();
         
+    }
+    //碰撞事件:碰到其他碰瘴氣開始執行一次
+    private void OnCollisionEnter2D(Collision collision)
+    {
+        print(collision.gameObject.name);
+
+       DEAD();
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        DEAD();
     }
 }
