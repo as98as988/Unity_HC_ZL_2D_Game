@@ -17,7 +17,9 @@ public class chicken : MonoBehaviour
 
     public Rigidbody2D r2d;
     public GM gm;
-    
+    [Header("音效區域")]
+    public AudioSource aud;
+    public AudioClip soundJump, soundHit, soundAdd;
     private void Jump()
     {
         if (dead) return;//跳出此方法
@@ -37,7 +39,7 @@ public class chicken : MonoBehaviour
             //鋼體睡覺
             r2d.AddForce(new Vector2(0, jump));
             //鋼體.增加推力(2維向量)
-
+            aud.PlayOneShot(soundJump, 1.5f);
         }
         //velocity 鋼體加速度(x,y)左右x上下y
         print(r2d.velocity);
@@ -52,8 +54,10 @@ public class chicken : MonoBehaviour
 
     private void DEAD()        
     {
+        if (dead) return;
         dead = true;
         gm.GameOver();
+        aud.PlayOneShot(soundHit, 1.5f);
     }
 
 
@@ -62,7 +66,9 @@ public class chicken : MonoBehaviour
     private void passpipe() 
        
     {
-       
+        if (dead) return;
+        print("加分");
+        gm.AddScore(1);
     }
     private void Update()
     {
@@ -76,8 +82,18 @@ public class chicken : MonoBehaviour
 
        DEAD();
     }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        DEAD();
+        if (collision.gameObject.name == "04_水管 (1)" || collision.gameObject.name == "04_水管")
+        {
+
+            DEAD();
+        }
+        if(collision.gameObject.name=="加分區域")
+        {
+            passpipe();
+        }
+
     }
 }
