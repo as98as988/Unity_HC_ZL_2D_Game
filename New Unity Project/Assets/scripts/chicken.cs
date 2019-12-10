@@ -62,7 +62,7 @@ public class chicken : MonoBehaviour
 
     private void Start()
     {
-        Screen.SetResolution(720, 1280, false);
+        Screen.SetResolution(450, 800, false);
         //螢幕解析度和是否全頻
     }
 
