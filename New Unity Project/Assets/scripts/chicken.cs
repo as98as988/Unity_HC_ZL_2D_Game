@@ -60,7 +60,11 @@ public class chicken : MonoBehaviour
         aud.PlayOneShot(soundHit, 1.5f);
     }
 
-
+    private void Start()
+    {
+        Screen.SetResolution(720, 1280, false);
+        //螢幕解析度和是否全頻
+    }
 
 
     private void passpipe() 

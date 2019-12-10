@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.SceneManagement;
 public class GM : MonoBehaviour
 {
     
@@ -63,12 +63,27 @@ public class GM : MonoBehaviour
         goUI.SetActive(true);
         floor.speed = 0;
     }
+    public void Replay()
+    {
+        // Application.LoadLevel("遊戲場景");  //應用程式.載入關卡("關卡名稱")
+        SceneManager.LoadScene("SampleScene");
+    }
+
+    /// <summary>
+    /// 離開遊戲
+    /// </summary>
+    public void Exit()
+    {
+        Application.Quit();  //應用程式.離開遊戲.
+    }
+
     private void Start()
     {
         // SpawnPipe();
-
+        
         InvokeRepeating("SpawnPipe", 0, 1.5f);
         scoreheight = PlayerPrefs.GetInt("最高分數");
         textHeight.text = scoreheight.ToString();
+        floor.speed = 10;
     }
 }
